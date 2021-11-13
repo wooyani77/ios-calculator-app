@@ -8,11 +8,7 @@
 import Foundation
 import Metal
 
-protocol CalculateItem {
-    
-}
-
-struct CalculatorItemQueue<Element>: CalculateItem {
+struct CalculatorItemQueue<Element: CalculateItem> {
     private(set) var enQueueElements: [Element] = []
     private(set) var deQueueElements: [Element] = []
     
