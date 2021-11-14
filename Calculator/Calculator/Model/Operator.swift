@@ -20,15 +20,15 @@ enum Operator: Character, CaseIterable {
         case .subtract:
             return subtract(lhs: lhs, rhs: rhs)
         case .divide:
-            var a: Double = 0
+            var result: Double = 0
             do {
-                a = try divide(lhs: lhs, rhs: rhs)
+                result = try divide(lhs: lhs, rhs: rhs)
             } catch CalculatorError.divideByZero {
                 print(CalculatorError.divideByZero.description)
             } catch {
                 print(error)
             }
-            return a
+            return result
         case .multiply:
             return multiply(lhs: lhs, rhs: rhs)
         }
