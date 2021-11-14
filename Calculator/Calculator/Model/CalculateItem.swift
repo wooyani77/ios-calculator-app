@@ -8,15 +8,15 @@
 import Foundation
 
 protocol CalculateItem {
-    
+
 }
 
-extension Double {
-    
+extension Double: CalculateItem {
+  
 }
 
 extension String {
     func split(with target: Character) -> [String] {
-        self.split(separator: target).map{ String($0) }
+        self.split(separator: target).map { String($0) }
     }
 }

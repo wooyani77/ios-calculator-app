@@ -8,9 +8,8 @@
 import Foundation
 
 enum ExpressionParser {
-    func parse(from input: String) -> Formula {
-        let operands = input.components(separatedBy: "+")
-        let operators = input.components(separatedBy: " ")
+    static func parse(from input: String) -> Formula {
+        
     }
     
     func componentsByOperators(from input: String) -> [String] {
