@@ -23,30 +23,26 @@ class OperatorTests: XCTestCase {
 
     func test_when_case_is_add() {
         sut = .add
-        let result = sut.calculate(lhs: 10, rhs: 4)
         
-        XCTAssertEqual(result, 14)
+        XCTAssertEqual(try sut.calculate(lhs: 10, rhs: 4), 14)
     }
     
     func test_when_case_is_subtract() {
         sut = .subtract
-        let result = sut.calculate(lhs: 10, rhs: 4)
         
-        XCTAssertEqual(result, 6)
+        XCTAssertEqual(try sut.calculate(lhs: 10, rhs: 4), 6)
     }
     
     func test_when_case_is_divide() {
         sut = .divide
-        let result = sut.calculate(lhs: 10, rhs: 4)
         
-        XCTAssertEqual(result, 2.5)
+        XCTAssertEqual(try sut.calculate(lhs: 10, rhs: 4), 2.5)
     }
     
     func test_when_case_is_multiply() {
         sut = .multiply
-        let result = sut.calculate(lhs: 10, rhs: 4)
-        
-        XCTAssertEqual(result, 40)
+
+        XCTAssertEqual(try sut.calculate(lhs: 10, rhs: 4), 40)
     }
 
 }
