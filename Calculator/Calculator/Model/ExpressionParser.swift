@@ -16,12 +16,14 @@ enum ExpressionParser {
     }
     
     static func componentsByOperators(from input: String) -> [String] {
-        var inputArray: [String] = []
+        var result: [String] = [input]
         Operator.allCases.forEach { `operator` in
-            for _ in input {
-                inputArray = input.split(with: `operator`.rawValue)
+            var splitedString: [String] = []
+            for input in result {
+                splitedString += input.split(with: `operator`.rawValue)
+                result = splitedString
             }
         }
-        return inputArray
+        return result
     }
 }
