@@ -96,9 +96,10 @@
 			children = (
 				C713D9432570E5EB001C3AFC /* SceneDelegate.swift */,
 				C713D9412570E5EB001C3AFC /* AppDelegate.swift */,
+				FB4C12E827422AEE00124523 /* Error */,
 				FB4C12E32742273300124523 /* Extension */,
-				FB4C12E0274226EB00124523 /* Protocol */,
 				FB01135E273BCDCB00310758 /* Controller */,
+				FB4C12E0274226EB00124523 /* Protocol */,
 				FB01135C273BCDBF00310758 /* Model */,
 				FB01135D273BCDC600310758 /* View */,
 				C713D94F2570E5ED001C3AFC /* Info.plist */,
@@ -118,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				FB011349273A530100310758 /* CalculatorItemQueue.swift */,
-				FB01135A273BCB3400310758 /* CalculatorError.swift */,
 				FB4C12D8273E503A00124523 /* Formula.swift */,
 				FB4C12DC273E50EA00124523 /* Operator.swift */,
 				FB4C12DE273E54C200124523 /* ExpressionParser.swift */,
@@ -159,6 +159,14 @@
 				FB4C12E62742275F00124523 /* DoubleExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FB4C12E827422AEE00124523 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				FB01135A273BCB3400310758 /* CalculatorError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

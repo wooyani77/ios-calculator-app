@@ -9,22 +9,20 @@ import Foundation
 
 enum ExpressionParser {
     static func parse(from input: String) -> Formula {
-        var operands = componentsByOperators(from: input).compactMap { Double($0) }
-        var operators = input.compactMap { <#Character#> in
-            <#code#>
-        }
+        let operands = componentsByOperators(from: input).compactMap { Double($0) }
+        let operators = input.compactMap { Operator(rawValue: $0) }
         
-        return Formula(operands: CalculatorItemQueue(enQueueElements: operands), operators: CalculatorItemQueue(enQueueElements: operators))
+        return Formula(operands: CalculatorItemQueue(operands), operators: CalculatorItemQueue(operators))
     }
     
     static func componentsByOperators(from input: String) -> [String] {
-        var a: [String] = []
+        var inputArray: [String] = []
         Operator.allCases.forEach { `operator` in
             for _ in input {
-                a = input.split(with: `operator`.rawValue)
+                inputArray = input.split(with: `operator`.rawValue)
             }
         }
-        return a
+        return inputArray
     }
     
 }

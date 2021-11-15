@@ -29,7 +29,7 @@ struct CalculatorItemQueue<Element: CalculateItem> {
         return deQueueElements.removeLast()
     }
     
-    init(enQueueElements: [Element] = [], deQueueElements: [Element] = []) {
+    init(_ enQueueElements: [Element] = [], _ deQueueElements: [Element] = []) {
         self.enQueueElements = enQueueElements
         self.deQueueElements = deQueueElements
     }
