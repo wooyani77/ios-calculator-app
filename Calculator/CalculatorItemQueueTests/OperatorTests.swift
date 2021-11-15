@@ -6,16 +6,47 @@
 //
 
 import XCTest
+@testable import Calculator
 
 class OperatorTests: XCTestCase {
-
+    var sut: Operator!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        sut = Operator(rawValue: "+")
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        try super.tearDownWithError()
+        sut = nil
     }
 
+    func test_when_case_is_add() {
+        sut = .add
+        let result = sut.calculate(lhs: 10, rhs: 4)
+        
+        XCTAssertEqual(result, 14)
+    }
+    
+    func test_when_case_is_subtract() {
+        sut = .subtract
+        let result = sut.calculate(lhs: 10, rhs: 4)
+        
+        XCTAssertEqual(result, 6)
+    }
+    
+    func test_when_case_is_divide() {
+        sut = .divide
+        let result = sut.calculate(lhs: 10, rhs: 4)
+        
+        XCTAssertEqual(result, 2.5)
+    }
+    
+    func test_when_case_is_multiply() {
+        sut = .multiply
+        let result = sut.calculate(lhs: 10, rhs: 4)
+        
+        XCTAssertEqual(result, 40)
+    }
 
 }
