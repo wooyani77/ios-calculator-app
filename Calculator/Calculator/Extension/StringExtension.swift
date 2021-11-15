@@ -1,19 +1,11 @@
 //
-//  CalculateItem.swift
+//  StringExtension.swift
 //  Calculator
 //
-//  Created by 박우연 on 2021/11/12.
+//  Created by 박우연 on 2021/11/15.
 //
 
 import Foundation
-
-protocol CalculateItem {
-
-}
-
-extension Double: CalculateItem {
-  
-}
 
 extension String {
     func split(with target: Character) -> [String] {
