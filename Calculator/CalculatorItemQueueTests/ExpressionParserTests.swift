@@ -44,5 +44,19 @@ class ExpressionParserTests: XCTestCase {
     }
     
     //MARK: - parse()
+    func test_parse메서드를_호출했을때_피연산자가_반환되는지() {
+        var operands = sut.parse(from: "10+3_7*5/2").operands
+        
+        [10.0, 3.0, 7.0, 5.0, 2.0].forEach { element in
+            XCTAssertEqual(element, try! operands.deQueueFirstElement())
+        }
+    }
     
+    func test_parse메서드를_호출했을때_연산자가_반환되는지() {
+        var operators = sut.parse(from: "10+3_7*5/2").operators
+        
+        [Operator.add, Operator.subtract, Operator.multiply, Operator.divide].forEach { element in
+            XCTAssertEqual(element, try! operators.deQueueFirstElement())
+        }
+    }
 }
