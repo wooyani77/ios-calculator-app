@@ -6,13 +6,12 @@
 //
 
 import Foundation
-import Metal
 
 struct CalculatorItemQueue<Element: CalculateItem> {
     
     // MARK: - 기본값을 안주고 init에서 매개변수 기본값을 주면 생성할 때 원하는 값으로 시작해서 외부에서는 접근할 수 없게 할 수있음.
-    private(set) var enQueueElements: [Element]
-    private(set) var deQueueElements: [Element]
+    private(set) var enQueueElements: [Element] = []
+    private(set) var deQueueElements: [Element] = []
     
     mutating func enQueueElement(_ element: Element) {
         enQueueElements.append(element)
@@ -29,8 +28,7 @@ struct CalculatorItemQueue<Element: CalculateItem> {
         return deQueueElements.removeLast()
     }
     
-    init(_ enQueueElements: [Element] = [], _ deQueueElements: [Element] = []) {
+    init(_ enQueueElements: [Element] = []) {
         self.enQueueElements = enQueueElements
-        self.deQueueElements = deQueueElements
     }
 }

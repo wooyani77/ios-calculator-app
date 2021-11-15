@@ -8,10 +8,10 @@
 import Foundation
 
 enum ExpressionParser {
+    // "1+2+3"
     static func parse(from input: String) -> Formula {
-        let operands = componentsByOperators(from: input).compactMap { Double($0) }
-        let operators = input.compactMap { Operator(rawValue: $0) }
-        
+        let operands = componentsByOperators(from: input).compactMap { Double($0) } // [1.0, 2.0, 3.0]
+        let operators = input.compactMap { Operator(rawValue: $0) } // ["+", "+"]
         return Formula(operands: CalculatorItemQueue(operands), operators: CalculatorItemQueue(operators))
     }
     
@@ -24,6 +24,4 @@ enum ExpressionParser {
         }
         return inputArray
     }
-    
 }
-
