@@ -8,11 +8,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var operandsLabel: UILabel!
+    @IBOutlet weak var operatorLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setinitialLabel()
     }
 
-
+    func setinitialLabel() {
+        operandsLabel.text = ""
+        operatorLabel.text = ""
+    }
+    
 }
-
