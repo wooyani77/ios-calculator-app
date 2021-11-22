@@ -13,12 +13,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setinitialLabel()
+        setInitialLabel()
     }
 
-    func setinitialLabel() {
+    func setInitialLabel() {
         operandsLabel.text = ""
         operatorLabel.text = ""
     }
+    
+    @IBAction func tapNumberButton(_ sender: UIButton) {
+        operandsLabel.text = sender.currentTitle
+    }
+    
     
 }
