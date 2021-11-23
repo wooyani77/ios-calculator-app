@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     }
 
     func setInitialLabel() {
-        operandsLabel.text = ""
+        operandsLabel.text = "0"
         operatorLabel.text = ""
     }
     
@@ -30,5 +30,9 @@ class ViewController: UIViewController {
     
     @IBAction func tapNumberButton(_ sender: UIButton) {
         operandsLabel.text = sender.currentTitle
+    }
+    
+    @IBAction func tapOperatorButton(_ sender: UIButton) {
+        operatorLabel.text = sender.currentTitle
     }
 }
